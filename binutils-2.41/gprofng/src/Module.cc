@@ -865,7 +865,7 @@ Module::get_data (DbeView *dbev, MetricList *mlist, Histable::Type type,
 	}
       status = checkTimeStamp (true);
     }
-  total = ftotal;
+ // total = ftotal;
 
   // initialize line number
   init_line ();
@@ -1129,7 +1129,7 @@ Module::get_data (DbeView *dbev, MetricList *mlist, Histable::Type type,
 	  }
 	}
     }
-
+  data_items->total->value =ftotal;
   // free memory used by Computing & Printing metrics
   delete[] maximum;
   delete[] maximum_inc;

@@ -845,6 +845,8 @@ dump_anno_file (FILE *fp, Histable::Type type, Module *module, DbeView *dbev,
   StringBuilder sb;
   Vec_loop (Hist_data::HistItem*, hdata, hidx, item)
   {
+   if(((((DbeLine*) item->obj)->lineno>=func->line_first) && (((DbeLine*) item->obj)->lineno<= func->line_last))||((((DbeInstr*) item->obj)->lineno>=func->line_first) && (((DbeInstr*) item->obj)->lineno<= func->line_last)))
+ {
     sb.setLength (0);
     if (item->type == Module::AT_DIS || item->type == Module::AT_QUOTE
 	|| item->type == Module::AT_SRC)
@@ -904,6 +906,7 @@ dump_anno_file (FILE *fp, Histable::Type type, Module *module, DbeView *dbev,
       item->value[lind].l = dbe_strdup (GTXT ("INTERNAL ERROR: missing line text"));
     fprintf (fp, NTXT ("%s\n"), item->value[lind].l);
   }
+ }
   delete hdata;
 }
 
