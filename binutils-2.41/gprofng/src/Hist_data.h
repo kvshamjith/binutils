@@ -199,7 +199,7 @@ public:
   HistItem *new_hist_item (Histable *obj, int itype, TValue *value);
   HistItem *update_hist_item (HistItem *hi, TValue *value);
   Vector<uint64_t> *get_object_indices (Vector<int> *selections);
-
+  HistItem *total;
 private:
 
   Metric::HistMetric *hist_metrics;
@@ -223,7 +223,7 @@ private:
   HistItem *maximum;
   HistItem *minimum;
   HistItem *maximum_inc;
-  HistItem *total;
+//  HistItem *total;
   HistItem *threshold;
 
   // Perform the sort operation with this function
