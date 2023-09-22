@@ -907,7 +907,7 @@ dump_anno_file (FILE *fp, Histable::Type type, Module *module, DbeView *dbev,
     fprintf (fp, NTXT ("%s\n"), item->value[lind].l);
   }
  }
-  delete hdata;
+//  delete hdata;
 }
 
 void
